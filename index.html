@@ -7,8 +7,13 @@
 </head>
 <body>
     <header class="web header"> <!-- 2 clases-->
-       <div class="brand">Series DB</div>
-        <nav>
+     <div class="container">
+      <div class="row">
+          <div class="col-3">
+             <div class="brand">Series DB</div> 
+          </div>
+          <div class="col-6">
+             <nav class="main menu">
             <ul>
                 <li>
                     <a href="#" title="Sistema de recomendación de series y películas">Descubrir</a>
@@ -25,11 +30,16 @@
                 </li>
             </ul>
         </nav>
-        <form class="search form">
+          </div>
+          <div class="col-3">
+            <form class="search form">
             <input type="search" id="search" name="q" 
             placeholder="Buscar...">
             <button type="search">Buscar</button>
-        </form>
+        </form>  
+          </div>
+      </div>
+    </div>
     </header>
     <main class="web main">
         <section class="series media list">

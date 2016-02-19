@@ -1,0 +1,18 @@
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+.horizontal-list(){ //no se genera CSS
+    list-style: none; //quita los puntitos
+    padding: 0;
+    margin: 0;
+    li{
+        display: inline;
+    }
+}
