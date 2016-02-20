@@ -5,12 +5,12 @@ An awesome movie clone of The Movies Database to learn HTML5,CSS3 and JavaScript
 Debes tener instalado [nodejs](hhtp://nodejs.org/en) y
 con *npm* instalar *grunt* y *less* utilizando:
 
-$sudo npm install -g grunt-cli less
+`$sudo npm install -g grunt-cli less`
 
 A continuación clona el repositorio e instala las dependencias
-para grunt con 'npm-install' desde la carpeta del proyecto
+para grunt con `npm-install` desde la carpeta del proyecto.
 
-Después arranca *grunt*, utilizando el comando 'grunt'
+Después arranca *grunt*, utilizando el comando `grunt`
 
 ## Changelog
 
