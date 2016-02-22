@@ -1,0 +1,45 @@
+.media.item{
+    margin-bottom: 25px;
+    margin-right: 10px;
+    padding: 10px;
+    
+   
+    .link{
+        color:@main-text-color;
+    }
+    .cover{overflow: hidden;}
+   
+    img{
+        .img-responsive();
+        transition: transform 250ms;
+    }
+    .wrapper{
+        margin: 0px 25px 25px 25px;
+    }
+    .title{
+        margin: 0px 0px 15px 0px;
+        font-size: 18px;
+    }
+    .categories ul{
+        .horizontal-list();
+        li:after{ //Al final de los elementos li
+            content: ",";
+        }
+        li:last-child:after{
+            content: "";
+        }
+    }
+    .rating{
+        display: inline;
+        margin: 20px;
+    }
+    .video-wrapper{perspective: 2100px;}
+    .video{
+        width: 100%;
+        height: 452px;
+        background: black;
+        animation: bounceInDown 2s;
+        transform: rotateY(-50deg);
+        
+    }
+}

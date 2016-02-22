@@ -1,0 +1,39 @@
+.web.header{
+    background:@carrera;
+    .brand{
+        font-size: 25px;
+        font-family: @font-family-serif;
+        margin-top: 4px;
+
+    }
+    .form.search{
+        margin-top: 9px;
+         .if-is-mobile({
+            display: none;
+        });
+    }
+    .main.menu{
+        ul{
+            .horizontal-list();
+             text-align: center;
+             margin-left: 4px; //Corrige la ñapa de abajo para que quede centrado
+            li{
+                margin-left: -4px;
+            }
+            a{
+                text-decoration: none;
+                display: inline-block;
+                background: darken(@Little-Lion,30%);
+                color: white;
+                padding: 10px 20px;
+                transition: background 250ms;
+                &:hover{
+                    background: darken(@Little-Lion,50%)
+                }
+            }
+        }
+        .if-is-mobile({
+            display: none;
+        });
+    }
+}
