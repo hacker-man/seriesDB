@@ -1,0 +1,16 @@
+.media.list{ //Solo para los de la página principal
+    .media.item{
+        height: 240px;
+        overflow: hidden; //Oculta lo que se sale del contenedor
+        .if-is-mobile({
+            height: auto;
+        });
+        border-radius: 25px;
+        box-shadow: 3px 3px 3px #666666;
+         &:hover{
+        img{
+            transform: scale(1.2);
+        }
+    }
+    }
+}

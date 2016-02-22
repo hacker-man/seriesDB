@@ -1,72 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>The Flash</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Series DB</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header class="web header"> <!-- 2 clases-->
-       <div class="brand">Series DB</div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" title="Sistema de recomendación de series y películas">Descubrir</a>
-                </li>
-                <li>
-                    <a href="#" title="Catálogo de películas">Películas</a>
-                </li>
-                <li>
-                    <a href="#" title="Catálogo de series">Series</a>
-                </li>
-                <li>
-                    <a href="#" title="listado de actores y actrices 
+    <header class="web header">
+        <!-- 2 clases-->
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="brand">Series DB</div>
+                </div>
+                <div class="col-6">
+                    <nav class="main menu">
+                        <ul>
+                            <li>
+                                <a href="#" title="Sistema de recomendación de series y películas">Descubrir</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Catálogo de películas">Películas</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Catálogo de series">Series</a>
+                            </li>
+                            <li>
+                                <a href="#" title="listado de actores y actrices 
                     y películas">Actores y actrices</a>
-                </li>
-            </ul>
-        </nav>
-        <form class="search form">
-            <input type="search" id="search" name="q" 
-            placeholder="Buscar...">
-            <button type="search">Buscar</button>
-        </form>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-3">
+                    <form class="search form">
+                        <input type="search" id="search" name="q" placeholder="Buscar...">
+                        <button type="search">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </header>
     <main class="web main series media item detail">
-        
+        <div class="container">
             <header class="series media header">
                 <h3 class="series media title">
                     The Flash
-                </h3>  
-                <img src = "https://image.tmdb.org/t/p/w185/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg"
-                alt="The Flash" title="carátula de The Flash">
+                </h3>
+
             </header>
-            <div class ="meta">
-                <div class="categories">
-                    <ul>
-                        <li>Drama</li>
-                        <li>Aventura</li>
-                        <li>Acción</li>
-                    </ul>
+            <div class="row">
+                <div class="col-3">
+                    <div class="cover">
+                        <img src="https://image.tmdb.org/t/p/w185/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg" alt="The Flash" title="carátula de The Flash">
+                    </div>
+                    <div class="meta">
+                        <time class="release date" datetime="2014-03-12">2014</time>
+                        <div class="rating">7.1</div>
+                    </div>
                 </div>
-                <time class="release date" datetime="2014-03-12">2014</time>
-                <div class="rating">7.1</div>
+                <div class="col-9">
+                    <div class="video-wrapper">
+                        <video class="video trailer" controls muted autoplay>
+                            <source src="http://movietrailers.apple.com/movies/wb/batmanvsuperman/batmanvssuperman-us-tlr4_i320.m4v" type="video/mp4">
+                            </source>
+                        </video>
+                    </div>
+
+                    <div class="meta">
+                        <div class="categories">
+                            <ul>
+                                <li>Drama</li>
+                                <li>Aventura</li>
+                                <li>Acción</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
             <p class="overview">
                 Después de que un acelerador de partículas cause una extraña tormenta, al investigador científico de la policía, Barry Allen, le cae un rayo y entra en coma. Meses…
             </p>
-            <video class="video trailer" controls muted poster="https://image.tmdb.org/t/p/w185/lUFK7ElGCk9kVEryDJHICeNdmd1.jpg"> 
-                <source src="http://movietrailers.apple.com/movies/wb/batmanvsuperman/batmanvssuperman-us-tlr4_i320.m4v" type="video/mp4">
-                </source>
-            </video>
-        
+        </div>
+
+
+
+
+
 
     </main>
-    <footer class="web footer"> <!-- 2 clases-->
-       <nav>
-         <a href="#">Aviso legal</a>
-         <a href="#">Política de cookies</a>  
-         <a href="#" class="go top">Volver arriba</a>
-       </nav>
-        
+
+    <footer class="web footer">
+        <!-- 2 clases-->
+        <nav>
+            <a href="#">Aviso legal</a>
+            <a href="#">Política de cookies</a>
+            <a href="#" class="go top">Volver arriba</a>
+        </nav>
+
     </footer>
 </body>
+
 </html>

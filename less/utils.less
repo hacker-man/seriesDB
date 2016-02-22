@@ -22,3 +22,8 @@
     width: 100%;
     max-width: 100%;
 }
+.if-is-mobile(@rules){ //Si el ancho es menor en 1px que un desktop
+    @media screen and(max-width:(@desktop-width - 1)){
+        @rules();
+    }
+}
