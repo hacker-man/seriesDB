@@ -1,3 +1,38 @@
 .media.item{
-    img{.img-responsive();}
+    height: 240px;
+    margin-bottom: 25px;
+    overflow: hidden; //Oculta lo que se sale del contenedor
+    .link{
+        color:@main-text-color;
+    }
+    .cover{overflow: hidden;}
+    &:hover{
+        img{
+            transform: scale(1.2);
+        }
+    }
+    img{
+        .img-responsive();
+        transition: transform 250ms;
+    }
+    .wrapper{
+        margin: 0px 25px 25px 25px;
+    }
+    .title{
+        margin: 0px 0px 15px 0px;
+        font-size: 18px;
+    }
+    .categories ul{
+        .horizontal-list();
+        li:after{ //Al final de los elementos li
+            content: ",";
+        }
+        li:last-child:after{
+            content: "";
+        }
+    }
+    .rating{
+        display: inline;
+        margin: 20px;
+    }
 }
