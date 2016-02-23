@@ -9,23 +9,12 @@
 
 <body>
     <div id="demo">Hello World!</div>
-    <button id="magicButton">Update date</button>
-    <button id="addListenerButton">Add listener</button>
-    <button id="removeListener">Remove listener</button>
+    <button id="saveButton">Save</button>
+    
     <script>
-        function updateDate() {
-            //debugger;
-            console.log("updateDate",arguments);
-            document.getElementById('demo').innerHTML = new Date();
-        }
-
-        document.getElementById("addListenerButton").addEventListener("click", function () {
-            console.log("addListenerButton",arguments);
-            document.getElementById('magicButton').addEventListener("click", updateDate);
-        });
-        document.getElementById("removeListener").addEventListener("click", function () {
-            console.log("removeListener");
-            document.getElementById('magicButton',arguments).removeEventListener("click", updateDate);
+       document.getElementById("demo").contentEditable = true;
+        document.getElementById("saveButton").addEventListener("click",function(evt){
+            console.log("Contenido",document.getElementById("demo").innerHTML);
         });
     </script>
 
