@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-  
+
 </head>
+
 <body>
     <div id="demo">Hello World!</div>
-    <button id = "magicButton">Update date</button>
+    <button id="magicButton">Update date</button>
     <button id="addListenerButton">Add listener</button>
     <button id="removeListener">Remove listener</button>
     <script>
-        function updateDate(){
-            document.getElementById('demo').innerHTML = new Date()
+        function updateDate() {
+            //debugger;
+            console.log("updateDate",arguments);
+            document.getElementById('demo').innerHTML = new Date();
         }
-        function manejador(){
-             document.getElementById('magicButton').addEventListener("click",updateDate);
-        }
-        function eliminaManjeajdor(){
-            document.getElementById('magicButton').removeEventListener("click",updateDate);
-        }
-       
-       document.getElementById("addListenerButton").addEventListener("click",manejador);
-       document.getElementById("removeListener").addEventListener("click",eliminaManjeajdor);
+
+        document.getElementById("addListenerButton").addEventListener("click", function () {
+            console.log("addListenerButton",arguments);
+            document.getElementById('magicButton').addEventListener("click", updateDate);
+        });
+        document.getElementById("removeListener").addEventListener("click", function () {
+            console.log("removeListener");
+            document.getElementById('magicButton',arguments).removeEventListener("click", updateDate);
+        });
     </script>
-   
+
 </body>
+
 </html>
