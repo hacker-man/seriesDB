@@ -21,8 +21,22 @@ $(document).ready(function(){//Cuando la página se ha cargado por completo.
             alert("Selecciona al menos una categoría");
             return false;
         }
-        
-        return true; //Permite envío del formulario.
+        $.ajax({
+            url: "/api/series/",
+            data:JSON.stringify({
+                title: title,
+                url: url,
+            }),
+            contentType:'application/json',
+            method: 'post',
+            success: function(){
+                alert("Guardado con éxito");
+            },
+            error: function(){
+                alert("Se ha producido un error");
+            }
+        });
+        return false; 
         
     });
 });
