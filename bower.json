@@ -1,0 +1,23 @@
+{
+  "name": "seriesdb",
+  "description": "An awesome movie clone of The Movies Database to learn HTML5,CSS3 and JavaScript",
+  "main": "index.js",
+  "authors": [
+    "Lautaro Germán"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/hacker-man/seriesDB",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "bootstrap": "^3.3.6"
+  }
+}

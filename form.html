@@ -10,7 +10,7 @@
             <!--<fieldset> -->
             <!--<legend>Datos de la serie</legend>-->
             <div>
-                <input type="text" id="title" name="title" placeholder="Título de la serie" 
+                <input type="text" id="title" class="auto-focus" name="title" placeholder="Título de la serie" 
                        required>
             </div>   
             <div>
@@ -59,7 +59,7 @@
                 <ul>
                     <li>
                         <label>
-                            <input type="radio" name="age_cal" value="all" required>
+                            <input type="radio" name="age_cal" value="all" required checked>
                             Todos los públicos
                         </label>
                     </li>
@@ -97,5 +97,7 @@
             </div>
             <!--</fieldset>-->
         </form>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="js/src/app.js"></script>
     </body>
 </html>

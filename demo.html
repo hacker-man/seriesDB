@@ -17,7 +17,7 @@
             xhr.open("GET","/data.json",true);
             xhr.onreadystatechange = function(){ //Esto se ejecuta de manera asíncrona, cuando responda el servidor
               console.log("onreadystatechange",arguments); 
-                document.getElementById("content").innerHTML = this.responseText;
+                document.getElementById("content").innerHTML = JSON.parse(this.responseText).title;
             };
             xhr.send();
             console.log("Envío XMLHttpRequest");
