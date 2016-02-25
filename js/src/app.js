@@ -21,6 +21,7 @@ $(document).ready(function(){//Cuando la página se ha cargado por completo.
             alert("Selecciona al menos una categoría");
             return false;
         }
+        //Se ejecuta de maner asíncorna
         $.ajax({
             url: "/api/series/",
             data:JSON.stringify({
@@ -29,14 +30,67 @@ $(document).ready(function(){//Cuando la página se ha cargado por completo.
             }),
             contentType:'application/json',
             method: 'post',
-            success: function(){
+            success: function(){ //Cuando devuelve un código 2XX
                 alert("Guardado con éxito");
             },
-            error: function(){
+            error: function(){//Cuando se devuelve un código 4XX ó 5XX
                 alert("Se ha producido un error");
             }
         });
         return false; 
         
     });
+   
+    function reloadSeries(){
+        console.log("Cargando series");
+        $.ajax({ //Petición de los datos
+            url: "/api/series/",
+            success: function(data){
+                console.log("Series recuperadas",data)
+                var html = "";
+                for(var i in data){
+                    var id = data[i].id;
+                    var title = data[i].title;
+                    var url = data[i].url || ""; //data[i].url || "", sino esta definido -> devuelve undefined
+                    html += "<li>";
+                    html += title;
+                    if(url != "") 
+                        html += " ("+url+")";
+                    html += '<button data-serieid ="'+id+'">Eliminar</button>'
+                    html += "</li>";
+                }
+            $("#seriesList").html(html); //innerHTML = html
+            }
+        });
+    }
+     $("#reloadSeriesButton").on("click",reloadSeries);
+     reloadSeries();
+     $("#seriesList").on("click","button",function(){
+        console.log("Elimino la serie");
+         var id = $(this).data("serieid");//cojo el valor del atributo data-serieid del botón
+         var self = this;
+         $.ajax({
+             url: "/api/series/"+id,
+             method: "delete",
+             success: function(){
+                 $(self).parent().remove();
+             }
+         });
+        
+    });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

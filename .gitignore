@@ -4,3 +4,5 @@ node_modules/
 style.css
 #Node components
 bower_components/
+#Base datos
+db/
