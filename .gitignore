@@ -2,3 +2,7 @@
 node_modules/
 #CSS
 style.css
+#Node components
+bower_components/
+#Base datos
+db/
