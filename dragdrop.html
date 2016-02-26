@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drag&Drop</title>
+    <style>
+        .drag {
+            width: 100px;
+            height: 100px;
+            background: gold;
+            margin-right: 10px;
+            float: left;
+        }
+        
+        #drop {
+            width: 100%;
+            height: 200px;
+            background: black;
+            position: fixed;
+            bottom: 0px;
+            transition: background 250ms;
+            color: white;
+        }
+        
+        #drop.ok {
+            background: lightgreen;
+        }
+        
+        #drop.error {
+            background: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="drag" draggable="true" data-movie-id="A">A</div>
+    <div class="drag" draggable="true" data-movie-id="B">B</div>
+    <div id="drop"></div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        var draggedMovieId = null;
+        $(".drag").on("dragstart", function (evt) {
+            console.log("drag start", evt);
+            //Ponemos id a la pelicula que seleccionamos:
+           var movieId = $(this).data("movieId");
+            draggedMovieId = movieId;
+            evt.originalEvent.dataTransfer.setData("movieId",movieId);
+        }).on("dragend", function (evt) {
+            console.log("drag end",evt);
+            draggedMovieId = null;
+        });
+
+        $("#drop").on("dragover", function (evt) {
+            evt.preventDefault();
+            console.log("Drag Over",draggedMovieId);
+            if(draggedMovieId != "B")
+                $(this).addClass("ok");
+            else
+                $(this).addClass("error");
+
+        }).on("dragleave",function(evt){
+            console.log("DRAG LEAVE",evt);
+            $(this).removeClass("ok error");
+        }).on("drop", function (evt) {
+            evt.preventDefault();
+            var movieId = evt.originalEvent.dataTransfer.getData("movieId");
+            console.log("Dropped",movieId);
+            if(movieId != "B"){
+                var text = $(this).text();
+                text += movieId;
+                $(this).text(text);
+            }
+            $(this).removeClass("ok error");
+        });
+    </script>
+</body>
+
+</html>
